@@ -33,6 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const whatsappPopover = document.getElementById('whatsappPopover');
     const waCloseBtn = document.getElementById('waCloseBtn');
 
+    // Mantém a ordem visual das seções igual à ordem dos links do menu:
+    // Especialidade → Tratamentos → Endereços → Contato.
+    const unitsSection = document.getElementById('unidades');
+    const stepsSection = document.getElementById('como-funciona');
+    if (unitsSection && stepsSection) {
+        stepsSection.insertAdjacentElement('afterend', unitsSection);
+    }
+
     // --------------------------------------------------------------------------
     // 2. Scroll Progress Bar & Header Shadow
     // --------------------------------------------------------------------------
