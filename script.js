@@ -33,14 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const whatsappPopover = document.getElementById('whatsappPopover');
     const waCloseBtn = document.getElementById('waCloseBtn');
 
-    // Mantém a ordem visual das seções igual à ordem dos links do menu:
-    // Especialidade → Tratamentos → Endereços → Contato.
-    const unitsSection = document.getElementById('unidades');
-    const stepsSection = document.getElementById('como-funciona');
-    if (unitsSection && stepsSection) {
-        stepsSection.insertAdjacentElement('afterend', unitsSection);
-    }
-
     // --------------------------------------------------------------------------
     // 2. Scroll Progress Bar & Header Shadow
     // --------------------------------------------------------------------------
@@ -331,7 +323,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const sectionToNavMap = {
         'inicio': '#inicio',
         'especialidade': '#especialidade',
-        'missao': '#especialidade',
+        // A missão vem logo após as unidades no documento. Mantemos
+        // "Endereços" ativo até a seção de tratamentos começar para evitar
+        // que o destaque volte a um item anterior durante o scroll.
+        'missao': '#unidades',
         'unidades': '#unidades',
         'triagem': '#condicoes',
         'condicoes': '#condicoes',
