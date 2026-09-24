@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const openMobileMenu = () => {
         mainNav.classList.add('open');
+        header.classList.add('menu-open');
         drawerOverlay.classList.add('active');
         mobileToggle.classList.add('open');
         mobileToggle.setAttribute('aria-expanded', 'true');
@@ -79,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closeMobileMenu = () => {
         mainNav.classList.remove('open');
+        header.classList.remove('menu-open');
         drawerOverlay.classList.remove('active');
         mobileToggle.classList.remove('open');
         mobileToggle.setAttribute('aria-expanded', 'false');

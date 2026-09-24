@@ -3002,34 +3002,129 @@ button {
 }
 
 @media (max-width: 992px) {
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Remove o containing block criado pelo blur do header para o menu
+       realmente ocupar o viewport inteiro, incluindo a barra superior. */
+    .site-header {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .site-header.menu-open {
+        z-index: 10000;
+        background: transparent;
+        border-color: transparent;
+        box-shadow: none;
+    }
+
     .main-nav {
         position: fixed;
-        top: 0;
-        right: -100%;
-        width: 82%;
-        max-width: 360px;
-        height: 100vh;
-        background: var(--color-white);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
-        padding: 5rem 2rem 2rem 2rem;
-        transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        z-index: 1000;
+        inset: 0;
+        width: 100vw;
+        max-width: none;
+        height: 100dvh;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(40px) saturate(80%);
+        -webkit-backdrop-filter: blur(40px) saturate(80%);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+        padding: max(6rem, env(safe-area-inset-top)) 1.5rem max(2rem, env(safe-area-inset-bottom));
+        transform: translateY(-102%);
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.3s ease,
+            visibility 0s linear 0.35s;
+        z-index: 999;
         overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .drawer-overlay {
+        display: none;
     }
 
     .main-nav.open {
-        right: 0;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s;
     }
 
     .nav-list {
+        width: min(100%, 460px);
+        min-height: 100%;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1.25rem;
+        align-items: stretch;
+        justify-content: center;
+        gap: 0.4rem;
+        margin: 0 auto;
     }
 
     .nav-link {
-        font-size: 1.15rem;
-        font-weight: 600;
+        display: block;
+        width: 100%;
+        padding: 1rem 0.25rem;
+        font-family: var(--font-heading);
+        font-size: clamp(1.45rem, 6vw, 2rem);
+        font-weight: 700;
+        color: rgba(10, 37, 64, 0.72);
+        text-align: center;
+        letter-spacing: -0.02em;
+    }
+
+    .nav-link::after {
+        left: 50%;
+        bottom: 0.55rem;
+        height: 2px;
+        background: linear-gradient(90deg, var(--color-accent), var(--color-cyan));
+        transform: translateX(-50%);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--color-primary);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 44px;
+    }
+
+    .mobile-toggle.open {
+        position: fixed;
+        top: max(1.5rem, env(safe-area-inset-top));
+        left: 50%;
+        width: 44px;
+        height: 44px;
+        transform: translateX(-50%);
+        align-items: center;
+        justify-content: center;
+        border-radius: 0;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        box-shadow: none;
+    }
+
+    .mobile-toggle.open .bar {
+        position: absolute;
+        width: 24px;
+        height: 2.5px;
+        background-color: var(--color-primary);
+    }
+
+    .mobile-toggle.open .bar:nth-child(1) {
+        transform: rotate(45deg);
+    }
+
+    .mobile-toggle.open .bar:nth-child(3) {
+        transform: rotate(-45deg);
     }
 
     .mobile-toggle {
@@ -3198,8 +3293,9 @@ button {
     }
 
     .main-nav {
-        width: min(86%, 340px);
-        padding: 5.25rem 1.5rem 2rem;
+        width: 100vw;
+        max-width: none;
+        padding: max(5.5rem, env(safe-area-inset-top)) 1.25rem max(1.5rem, env(safe-area-inset-bottom));
     }
 
     .nav-list {
