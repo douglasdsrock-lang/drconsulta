@@ -3353,11 +3353,17 @@ button {
     .hero-cta-group .btn,
     .pillars-banner .btn,
     .unit-panel-actions .btn,
+    .mission-actions .btn,
     .triage-action-bar .btn,
     .final-cta-action .btn {
         width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
         justify-content: center;
         white-space: normal;
+        overflow-wrap: anywhere;
         text-align: center;
         line-height: 1.35;
     }
@@ -3466,6 +3472,19 @@ button {
     .mission-main-img {
         min-height: 0;
         height: clamp(360px, 115vw, 500px);
+    }
+
+    .mission-grid,
+    .mission-grid > *,
+    .mission-content,
+    .mission-actions,
+    .mission-img-wrapper {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .mission-actions {
+        width: 100%;
     }
 
     .mission-stat-badge {
