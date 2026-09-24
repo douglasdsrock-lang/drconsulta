@@ -94,11 +94,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 992) {
                 closeMobileMenu();
             }
         });
     });
+
+    // Garante que o drawer não permaneça aberto ao voltar para o desktop.
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 992 && mainNav.classList.contains('open')) {
+            closeMobileMenu();
+        }
+    }, { passive: true });
 
     // --------------------------------------------------------------------------
     // 4. Hub Interativo de Unidades (Tabs)
@@ -376,4 +383,42 @@ document.addEventListener('DOMContentLoaded', () => {
             trackWhatsAppConversion(location);
         });
     });
+
+    // --------------------------------------------------------------------------
+    // 11. Inicialização do Swiper JS (Instagram Carousel)
+    // --------------------------------------------------------------------------
+    if (typeof Swiper !== 'undefined') {
+        new Swiper('.instagram-swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 24,
+            grabCursor: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 16
+                },
+                768: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 20
+                },
+                992: {
+                    slidesPerView: 3.5,
+                    spaceBetween: 24
+                },
+                1200: {
+                    slidesPerView: 4.5,
+                    spaceBetween: 24
+                }
+            }
+        });
+    }
 });

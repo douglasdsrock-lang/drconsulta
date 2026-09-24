@@ -1984,7 +1984,7 @@ button {
     display: flex;
     align-items: baseline;
     font-family: var(--font-heading);
-    font-size: 3.25rem;
+    font-size: 2.3rem;
     font-weight: 800;
     color: var(--color-white);
     line-height: 1;
@@ -1994,9 +1994,9 @@ button {
 
 .counter-plus,
 .counter-suffix {
-    font-size: 2rem;
+    font-size: 2.3rem;
     color: var(--color-cyan);
-    margin-left: 0.2rem;
+    margin-left: 0.3rem;
 }
 
 .counter-label {
@@ -2863,6 +2863,134 @@ button {
 }
 
 /* --------------------------------------------------------------------------
+   Instagram Fake Section (Swiper)
+   -------------------------------------------------------------------------- */
+.section-instagram {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #EBF3FC 0%, #F8FAFC 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-instagram::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: rgba(56, 189, 248, 0.15);
+    filter: blur(80px);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.section-instagram::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 350px;
+    height: 350px;
+    background: rgba(30, 111, 217, 0.1);
+    filter: blur(80px);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.section-instagram .container {
+    position: relative;
+    z-index: 2;
+}
+
+.insta-post {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    border-radius: var(--radius-lg);
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(10, 37, 64, 0.05);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    border: 1px solid rgba(255, 255, 255, 1);
+    height: 100%;
+}
+
+.insta-post:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(10, 37, 64, 0.1);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.insta-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    border-radius: var(--radius-md);
+}
+
+.insta-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.insta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: var(--color-white);
+}
+
+.insta-post:hover .insta-overlay {
+    opacity: 1;
+}
+
+.insta-post:hover .insta-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.insta-icon {
+    font-size: 2.5rem;
+    color: var(--color-white);
+}
+
+.insta-bottom-bar {
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    background-color: transparent;
+}
+
+.insta-stats {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+}
+
+.insta-stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.insta-stats span i {
+    font-size: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
    21. Responsividade de Alta Precisão (Mobile First Adaptations)
    -------------------------------------------------------------------------- */
 @media (max-width: 1080px) {
@@ -2976,4 +3104,450 @@ button {
     
     .floating-whatsapp-hub { bottom: 18px; right: 18px; }
     .whatsapp-popover { width: calc(100vw - 36px); right: 0; }
+}
+
+/* Mobile refinements: compact spacing, fluid controls and overflow safety */
+@media (max-width: 768px) {
+    :root {
+        --header-height: 68px;
+    }
+
+    html {
+        scroll-padding-top: 76px;
+    }
+
+    body {
+        overflow-x: clip;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .section,
+    .section-instagram {
+        padding: 4rem 0;
+    }
+
+    .section-header,
+    .stats-top-header {
+        margin-bottom: 2.25rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+        line-height: 1.2;
+    }
+
+    .section-description {
+        font-size: 0.98rem;
+    }
+
+    .section-tag {
+        font-size: 0.72rem;
+        letter-spacing: 0.05em;
+        text-align: center;
+    }
+
+    .top-bar {
+        padding: 0.65rem 0;
+    }
+
+    .top-bar-content {
+        justify-content: center;
+    }
+
+    .top-info {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0.75rem;
+        text-align: center;
+        font-size: 0.75rem;
+        line-height: 1.35;
+    }
+
+    .top-info .divider,
+    .top-cta {
+        display: none;
+    }
+
+    .live-pill {
+        padding: 0.3rem 0.75rem;
+        font-size: 0.72rem;
+        white-space: nowrap;
+    }
+
+    .top-info > span:not(.live-pill):not(.divider) {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.35rem;
+        width: auto;
+        white-space: nowrap;
+    }
+
+    .unit-locations {
+        display: none;
+    }
+
+    .logo-img {
+        height: 40px;
+        max-width: 145px;
+    }
+
+    .main-nav {
+        width: min(86%, 340px);
+        padding: 5.25rem 1.5rem 2rem;
+    }
+
+    .nav-list {
+        width: 100%;
+    }
+
+    .nav-list li,
+    .nav-link {
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.8rem 0;
+    }
+
+    .hero-section {
+        padding: 0.75rem 0 2rem;
+    }
+
+    .hero-grid {
+        gap: 1rem;
+    }
+
+    .hero-media-wrapper {
+        order: -1;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 9.5vw, 2.4rem);
+        line-height: 1.14;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 1.35rem;
+        line-height: 1.55;
+    }
+
+    .hero-feature-pill {
+        align-items: stretch;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .pill-item {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .hero-cta-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-cta-group .btn,
+    .pillars-banner .btn,
+    .unit-panel-actions .btn,
+    .triage-action-bar .btn,
+    .final-cta-action .btn {
+        width: 100%;
+        justify-content: center;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.35;
+    }
+
+    .hero-social-proof {
+        align-items: flex-start;
+        gap: 0.85rem;
+        text-align: left;
+    }
+
+    .avatar-item {
+        width: 38px;
+        height: 38px;
+    }
+
+    .stars-row {
+        flex-wrap: wrap;
+        row-gap: 0.15rem;
+    }
+
+    .proof-meta {
+        line-height: 1.4;
+    }
+
+    .hero-media-wrapper {
+        margin: -1rem 0 -1.5rem;
+    }
+
+    .hero-image-frame::before,
+    .hero-image-frame::after,
+    .hero-media-glow {
+        transform: scale(0.7);
+    }
+
+    .marquee-fade-left,
+    .marquee-fade-right {
+        width: 36px;
+    }
+
+    .pillars-grid,
+    .conditions-grid,
+    .testimonials-grid,
+    .steps-timeline {
+        gap: 1.25rem;
+        margin-bottom: 2.25rem;
+    }
+
+    .pillar-card,
+    .condition-card,
+    .testimonial-card,
+    .step-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .card-ribbon {
+        top: 14px;
+        right: 14px;
+        max-width: 48%;
+        text-align: center;
+    }
+
+    .pillars-banner {
+        padding: 1.5rem 1.25rem;
+        gap: 1.25rem;
+    }
+
+    .unit-tabs-nav {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .unit-tab-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem 1rem;
+    }
+
+    .unit-panel-grid {
+        padding: 1.5rem 1.1rem;
+        gap: 1.75rem;
+        border-radius: var(--radius-lg);
+    }
+
+    .unit-display-title {
+        font-size: 1.45rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .unit-detail-row {
+        gap: 0.75rem;
+    }
+
+    .detail-content {
+        min-width: 0;
+    }
+
+    .detail-content p {
+        overflow-wrap: anywhere;
+    }
+
+    .clinic-photo {
+        height: 230px;
+    }
+
+    .mission-main-img {
+        min-height: 0;
+        height: clamp(360px, 115vw, 500px);
+    }
+
+    .mission-stat-badge {
+        left: 12px;
+        bottom: 12px;
+        padding: 0.85rem 1rem;
+    }
+
+    .mission-float-tag {
+        top: 12px;
+        right: 12px;
+        max-width: calc(100% - 24px);
+        white-space: normal;
+        text-align: center;
+    }
+
+    .mission-content {
+        text-align: center;
+    }
+
+    .mission-text {
+        font-size: 1rem;
+    }
+
+    .diff-box {
+        text-align: left;
+        padding: 1.15rem;
+    }
+
+    .triage-card-wrapper {
+        padding: 2rem 1.1rem;
+        border-radius: var(--radius-lg);
+    }
+
+    .triage-options-grid {
+        gap: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .triage-chip {
+        min-height: 0;
+        padding: 1.1rem;
+    }
+
+    .triage-action-bar {
+        align-items: stretch;
+        padding: 1.25rem 1rem;
+    }
+
+    .section-stats {
+        padding: 4.5rem 0;
+    }
+
+    .counters-grid {
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .counter-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .bar-info {
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .bar-name {
+        min-width: 0;
+        gap: 0.7rem;
+    }
+
+    .bar-icon-wrap {
+        flex: 0 0 38px;
+    }
+
+    .bar-title {
+        font-size: 0.92rem;
+    }
+
+    .bar-subtext {
+        display: block;
+        line-height: 1.35;
+    }
+
+    .bar-percentage-box {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.2rem;
+        flex-shrink: 0;
+    }
+
+    .bar-percentage {
+        font-size: 1.25rem;
+    }
+
+    .google-badge-inner {
+        width: 100%;
+        justify-content: center;
+        padding: 0.85rem 1rem;
+    }
+
+    .faq-question {
+        padding: 1.15rem 1rem;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .faq-answer p {
+        padding: 0 1rem 1.25rem;
+        font-size: 0.92rem;
+    }
+
+    .section-final-cta {
+        padding: 3.5rem 0 4rem;
+    }
+
+    .final-cta-card {
+        border-radius: var(--radius-lg);
+    }
+
+    .final-cta-trust {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .site-footer {
+        padding-top: 3.5rem;
+    }
+
+    .footer-container {
+        padding-bottom: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-left: 0.875rem;
+        padding-right: 0.875rem;
+    }
+
+    .hero-social-proof {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .stars-row {
+        justify-content: center;
+    }
+
+    .condition-header {
+        align-items: flex-start;
+        gap: 0.9rem;
+    }
+
+    .condition-title {
+        font-size: 1.1rem;
+    }
+
+    .progress-main-title {
+        font-size: 1.45rem;
+    }
+
+    .google-badge-inner {
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    .whatsapp-trigger-btn {
+        width: 54px;
+        height: 54px;
+        font-size: 1.65rem;
+    }
+
+    .whatsapp-popover {
+        width: calc(100vw - 28px);
+        bottom: 66px;
+    }
 }

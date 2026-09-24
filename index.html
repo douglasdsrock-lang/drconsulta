@@ -26,6 +26,9 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -40,7 +43,7 @@
             <div class="top-info">
                 <span class="live-pill"><span class="pulse-indicator"></span> Clínicas Abertas Hoje</span>
                 <span class="divider">|</span>
-                <span><i class="fa-solid fa-location-dot text-accent"></i> 3 Unidades: Centro BH, Barreiro e Contagem</span>
+                <span><i class="fa-solid fa-location-dot text-accent"></i> 2 Unidades<span class="unit-locations">: Barreiro e Contagem</span></span>
                 <span class="divider d-none-mobile">|</span>
                 <span class="d-none-mobile"><i class="fa-solid fa-shield-heart text-green"></i> +5.000 Pacientes Recuperados</span>
             </div>
@@ -221,7 +224,7 @@
                     <span class="marquee-separator">✦</span>
                     <div class="marquee-item">
                         <i class="fa-solid fa-location-dot marquee-icon icon-cyan"></i>
-                        <span>3 Unidades em BH e Contagem</span>
+                        <span>2 Unidades em BH e Contagem</span>
                     </div>
                     <span class="marquee-separator">✦</span>
                     <div class="marquee-item">
@@ -269,7 +272,7 @@
                     <span class="marquee-separator">✦</span>
                     <div class="marquee-item">
                         <i class="fa-solid fa-location-dot marquee-icon icon-cyan"></i>
-                        <span>3 Unidades em BH e Contagem</span>
+                        <span>2 Unidades em BH e Contagem</span>
                     </div>
                     <span class="marquee-separator">✦</span>
                     <div class="marquee-item">
@@ -370,7 +373,7 @@
                     <span class="section-tag"><i class="fa-solid fa-map-location-dot"></i> Endereços & Atendimento</span>
                     <h2 class="section-title">Nossas <span class="text-highlight-red">Unidades</span></h2>
                     <p class="section-description">
-                        Estamos em 3 localizações estratégicas para te atender melhor. Escolha a mais próxima:
+                        Estamos em 2 localizações estratégicas para te atender melhor. Escolha a mais próxima:
                     </p>
                 </div>
 
@@ -378,12 +381,7 @@
                 <div class="units-interactive-hub">
                     <!-- Seletor de Tabs -->
                     <div class="unit-tabs-nav" role="tablist">
-                        <button class="unit-tab-btn active" data-unit="centro" role="tab" aria-selected="true">
-                            <i class="fa-solid fa-building"></i>
-                            <span>Centro (BH)</span>
-                            <span class="tab-status-dot"></span>
-                        </button>
-                        <button class="unit-tab-btn" data-unit="barreiro" role="tab" aria-selected="false">
+                        <button class="unit-tab-btn active" data-unit="barreiro" role="tab" aria-selected="true">
                             <i class="fa-solid fa-hospital-user"></i>
                             <span>Barreiro (BH)</span>
                             <span class="tab-status-dot"></span>
@@ -397,65 +395,8 @@
 
                     <!-- Conteúdo Dinâmico das Abas -->
                     <div class="unit-tab-panels">
-                        <!-- Painel 1: Centro BH -->
-                        <div class="unit-tab-panel active" id="panel-centro" role="tabpanel">
-                            <div class="unit-panel-grid">
-                                <div class="unit-panel-info">
-                                    <div class="unit-city-badge">
-                                        <span class="badge-tag">Belo Horizonte</span>
-                                        <span class="live-open-badge"><span class="pulse-dot-green"></span> Aberto Hoje (08h às 19h)</span>
-                                    </div>
-                                    <h3 class="unit-display-title">Centro (BH) — Edifício Mesbla</h3>
-                                    
-                                    <div class="unit-detail-list">
-                                        <div class="unit-detail-row">
-                                            <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
-                                            <div class="detail-content">
-                                                <strong>Endereço Completo:</strong>
-                                                <p>Avenida Afonso Pena, 262 – Sala 2003 – 20º andar – Edifício Mesbla, Belo Horizonte – MG</p>
-                                                <button class="btn-copy-address" data-copy="Avenida Afonso Pena, 262 – Sala 2003 – 20º andar – Edifício Mesbla, Belo Horizonte – MG">
-                                                    <i class="fa-regular fa-copy"></i> Copiar Endereço
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="unit-detail-row">
-                                            <div class="detail-icon"><i class="fa-regular fa-clock"></i></div>
-                                            <div class="detail-content">
-                                                <strong>Horários de Atendimento:</strong>
-                                                <p>Segunda a Sexta, das 08h às 19h</p>
-                                            </div>
-                                        </div>
-                                        <div class="unit-detail-row">
-                                            <div class="detail-icon"><i class="fa-solid fa-car"></i></div>
-                                            <div class="detail-content">
-                                                <strong>Facilidades:</strong>
-                                                <p>Estacionamentos conveniados e pontos de ônibus próximos.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="unit-panel-actions">
-                                        <a href="https://maps.google.com/?q=Avenida+Afonso+Pena+262+Belo+Horizonte" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
-                                            <i class="fa-solid fa-diamond-turn-right"></i> Como Chegar
-                                        </a>
-                                        <a href="https://wa.me/5531999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Unidade%20BH%20Centro." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-shimmer">
-                                            <i class="fa-brands fa-whatsapp"></i> Agendar em BH Centro
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="unit-panel-preview">
-                                    <div class="clinic-preview-card">
-                                        <img src="assets/clinic-interior.jpg" alt="Estrutura e Consultório Dr. Coluna Centro BH" class="clinic-photo">
-                                        <div class="clinic-overlay-info">
-                                            <span><i class="fa-solid fa-award"></i> Sala 2003 • 20º Andar</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <!-- Painel 2: Barreiro -->
-                        <div class="unit-tab-panel" id="panel-barreiro" role="tabpanel">
+                        <div class="unit-tab-panel active" id="panel-barreiro" role="tabpanel">
                             <div class="unit-panel-grid">
                                 <div class="unit-panel-info">
                                     <div class="unit-city-badge">
@@ -847,10 +788,10 @@
                             <span class="counter-badge-pill pill-green">BH & Contagem</span>
                         </div>
                         <div class="counter-number-wrap">
-                            <span class="counter-number" data-target="3">0</span><span class="counter-suffix">Clínicas</span>
+                            <span class="counter-number" data-target="2">0</span><span class="counter-suffix">Unidades</span>
                         </div>
                         <h3 class="counter-label">Unidades de Atendimento</h3>
-                        <p class="counter-desc">Estruturas completas no Centro BH, Barreiro e Contagem.</p>
+                        <p class="counter-desc">Estruturas completas no Barreiro e em Contagem.</p>
                     </div>
                 </div>
 
@@ -1187,6 +1128,134 @@
                 </div>
             </div>
         </section>
+        <!-- Seção Instagram Fake -->
+        <section class="section section-instagram bg-light" id="instagram">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="fa-brands fa-instagram"></i> Siga-nos no Instagram</span>
+                    <h2 class="section-title">Acompanhe nosso Dia a Dia</h2>
+                    <p class="section-description">
+                        Dicas, resultados e bastidores do nosso tratamento. Siga o <a href="https://www.instagram.com/drcolunaoficial/" target="_blank" rel="noopener noreferrer" class="text-accent">@drcolunaoficial</a>.
+                    </p>
+                </div>
+                
+                <!-- Instagram Carousel / Grid (Swiper) -->
+                <div class="swiper instagram-swiper" style="padding-bottom: 3rem; margin-top: 2rem;">
+                    <div class="swiper-wrapper">
+                        <!-- Post 01 -->
+                        <div class="swiper-slide">
+                            <a href="https://www.instagram.com/p/DcpPN9OCd6-/?img_index=1" class="insta-post" target="_blank" rel="noopener noreferrer">
+                                <div class="insta-img-wrapper">
+                                    <img src="assets/posts/01.jpg" alt="Postagem Instagram 1" loading="lazy">
+                                    <div class="insta-overlay">
+                                        <i class="fa-brands fa-instagram insta-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="insta-bottom-bar">
+                                    <div class="insta-stats">
+                                        <span><i class="fa-regular fa-heart"></i> 14</span>
+                                        <span><i class="fa-regular fa-comment"></i> 2</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Post 02 -->
+                        <div class="swiper-slide">
+                            <a href="https://www.instagram.com/p/Dc3HPvuNwPg/" class="insta-post" target="_blank" rel="noopener noreferrer">
+                                <div class="insta-img-wrapper">
+                                    <img src="assets/posts/02.png" alt="Postagem Instagram 2" loading="lazy">
+                                    <div class="insta-overlay">
+                                        <i class="fa-brands fa-instagram insta-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="insta-bottom-bar">
+                                    <div class="insta-stats">
+                                        <span><i class="fa-regular fa-heart"></i> 35</span>
+                                        <span><i class="fa-regular fa-comment"></i> 2</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Post 03 -->
+                        <div class="swiper-slide">
+                            <a href="https://www.instagram.com/p/DYhTA1hgw7v/" class="insta-post" target="_blank" rel="noopener noreferrer">
+                                <div class="insta-img-wrapper">
+                                    <img src="assets/posts/03.jpg" alt="Postagem Instagram 3" loading="lazy">
+                                    <div class="insta-overlay">
+                                        <i class="fa-brands fa-instagram insta-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="insta-bottom-bar">
+                                    <div class="insta-stats">
+                                        <span><i class="fa-regular fa-heart"></i> 6</span>
+                                        <span><i class="fa-regular fa-comment"></i> 0</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Post 04 -->
+                        <div class="swiper-slide">
+                            <a href="https://www.instagram.com/p/DcQi-arxlh1/" class="insta-post" target="_blank" rel="noopener noreferrer">
+                                <div class="insta-img-wrapper">
+                                    <img src="assets/posts/04.png" alt="Postagem Instagram 4" loading="lazy">
+                                    <div class="insta-overlay">
+                                        <i class="fa-brands fa-instagram insta-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="insta-bottom-bar">
+                                    <div class="insta-stats">
+                                        <span><i class="fa-regular fa-heart"></i> 184</span>
+                                        <span><i class="fa-regular fa-comment"></i> 5</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Post 05 -->
+                        <div class="swiper-slide">
+                            <a href="https://www.instagram.com/p/DW7hQ7XiaKj/" class="insta-post" target="_blank" rel="noopener noreferrer">
+                                <div class="insta-img-wrapper">
+                                    <img src="assets/posts/05.jpg" alt="Postagem Instagram 5" loading="lazy">
+                                    <div class="insta-overlay">
+                                        <i class="fa-brands fa-instagram insta-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="insta-bottom-bar">
+                                    <div class="insta-stats">
+                                        <span><i class="fa-regular fa-heart"></i> 36</span>
+                                        <span><i class="fa-regular fa-comment"></i> 0</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Post 06 -->
+                        <div class="swiper-slide">
+                            <a href="https://www.instagram.com/p/DcGcigtRu3y/" class="insta-post" target="_blank" rel="noopener noreferrer">
+                                <div class="insta-img-wrapper">
+                                    <img src="assets/posts/06.png" alt="Postagem Instagram 6" loading="lazy">
+                                    <div class="insta-overlay">
+                                        <i class="fa-brands fa-instagram insta-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="insta-bottom-bar">
+                                    <div class="insta-stats">
+                                        <span><i class="fa-regular fa-heart"></i> 11,1 mil</span>
+                                        <span><i class="fa-regular fa-comment"></i> 39</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Paginação (Bolinhas) -->
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <div class="text-center" style="margin-top: 1rem;">
+                    <a href="https://www.instagram.com/drcolunaoficial/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-lg">
+                        <i class="fa-brands fa-instagram"></i> Siga @drcolunaoficial
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <!-- Seção 13 — CTA Final Magnético (AAA Immersive Dark Card) -->
         <section class="section section-final-cta" id="contato">
@@ -1213,7 +1282,7 @@
 
                         <div class="final-cta-trust">
                             <span><i class="fa-solid fa-check text-green"></i> Atendimento Rápido</span>
-                            <span><i class="fa-solid fa-check text-green"></i> 3 Unidades em MG</span>
+                            <span><i class="fa-solid fa-check text-green"></i> 2 Unidades em MG</span>
                             <span><i class="fa-solid fa-check text-green"></i> Sem Cirurgia</span>
                         </div>
                     </div>
@@ -1254,11 +1323,6 @@
 
             <div class="footer-col locations-col">
                 <h4 class="footer-heading">Nossas Unidades</h4>
-                <div class="footer-location-item">
-                    <strong>Centro BH (Edifício Mesbla):</strong>
-                    <span>Av. Afonso Pena, 262 – Sala 2003 – 20º andar</span>
-                    <span class="hours-tag">Seg a Sex: 08h às 19h</span>
-                </div>
                 <div class="footer-location-item">
                     <strong>Barreiro (BH):</strong>
                     <span>Rua Flávio Marques Lisboa, 345</span>
@@ -1318,6 +1382,9 @@
         </button>
     </div>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <!-- Custom Script -->
     <script src="script.js"></script>
 </body>
